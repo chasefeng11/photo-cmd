@@ -1,14 +1,36 @@
-Collaborators:
-
-Madeline Estey
-mestey1
-1731B9
-
-Chase Feng
-cfeng18
-927B18
-
-We used the pair programming method for the majority of this project (regardless of who actually committed, we both worked on it). The only times we did work individually was when we were at office hours, the weekend of the 23rd (Madeline was still too sick to meet in person), and the end of today (the 28th).
+AUTHORS: Chase Feng, Madeline Estey
+DATE: October 2021
 
 
+DESCRIPTION:
+A photoshop-inspired image processing program in C. The program takes an image files (in the .ppm format).
 
+It can the:
+1. binarize - convert the input image to black and white by thresholding
+2. crop - crop the input image given corner pixel locations
+3. rotate-left - rotate the input image 90 degrees counter-clockwise
+4. zoom-in - zoom into an image by a factor of 2
+5. pointilism - apply a pointilism technique
+6. blur - blur the image by a specified amount
+
+to produce a new image file. This is done by modifying each of the individual pixels (and their RGB values)
+of the beginning image in the appropriate way.
+
+
+INSTRUCTIONS: 
+Users should compile the program using the given Makefile, then run it by running the project executable,
+specifying the input file, output file, operation to perform, and any of the necessary parameters for that
+operation.
+
+The following operations have parameters:
+1. binarize - a single "threshold" value between 0-255, to compare against the grayscale value of each pixel.
+2. crop - four coordinate values, designating the upper and lower column/row values to crop.
+6. blur - a single "blur factor", designating how strong the blur effect is.
+
+
+PROJECT NOTES:
+This project was submitted as the Midterm Project for Intermediate Programming (EN.601.220) at Johns Hopkins
+University.
+
+Team Project Grade: A+ 
+Individual Course Grade: A
