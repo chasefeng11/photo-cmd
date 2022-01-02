@@ -4,22 +4,22 @@
 
 /* struct to store a point */
 typedef struct _point {
-  int x;
-  int y;
+    int x;
+    int y;
 } Point;
 
 /* struct to store an RGB pixel, one byte per channel */
 typedef struct _pixel {
-  unsigned char r;
-  unsigned char g;
-  unsigned char b;
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
 } Pixel;
 
 /* struct to store an entire image */
 typedef struct _image {
-  Pixel *data;
-  int rows;
-  int cols;
+    Pixel *data;
+    int rows;
+    int cols;
 } Image;
 
 

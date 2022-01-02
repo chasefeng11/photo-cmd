@@ -190,7 +190,7 @@ int resize_image(Image **im, int rows, int cols) {
     (*im)->data = realloc((*im)->data, sizeof(Pixel) * rows * cols);
 
     // Throw error if invalid data
-    if ((*im)->data == NULL){
+    if ((*im)->data == NULL) {
         return -1;
     }
 

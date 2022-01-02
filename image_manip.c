@@ -100,7 +100,7 @@ int crop(Image * img1, FILE * new_image, int upper_col, int upper_row,
 
 
 
-int zoom_in(Image * img1, FILE * new_image){
+int zoom_in(Image * img1, FILE * new_image) {
     Image * img2 = malloc(sizeof(Image));
 
     // Gets dimensions and space for new image
@@ -135,7 +135,7 @@ int zoom_in(Image * img1, FILE * new_image){
 
 
 
-int rotate_left(Image * img1, FILE * new_image){
+int rotate_left(Image * img1, FILE * new_image) {
     Image * img2 = malloc(sizeof(Image));
 
     // New image will have reverse dimension of the original
@@ -162,7 +162,7 @@ int rotate_left(Image * img1, FILE * new_image){
 }
 
 
-int pointilism(Image * img1, FILE * new_image){
+int pointillism(Image * img1, FILE * new_image) {
     Image * img2 = malloc(sizeof(Image));
 
     // Setting up space for new image
@@ -171,35 +171,35 @@ int pointilism(Image * img1, FILE * new_image){
     img2->data = malloc(img2->rows * img2->cols * sizeof(int));
 
     // Loops through image for first time, and copies all contents to second image
-    for (int i = 0; i < img1->rows; i++){
-        for (int j = 0; j < img1->cols; j++){
+    for (int i = 0; i < img1->rows; i++) {
+        for (int j = 0; j < img1->cols; j++) {
             int k = i*img1->cols + j;
             img2->data[k] = img1->data[k];
         }
     }
 
-    // Loops through copied image, and applies pointilism to randomly selected
+    // Loops through copied image, and applies pointillism to randomly selected
     // pixels.
-    for (int i = 0; i < img1->rows; i++){
-        for (int j = 0; j < img1->cols; j++){
+    for (int i = 0; i < img1->rows; i++) {
+        for (int j = 0; j < img1->cols; j++) {
             int k1 = i*img1->cols + j;
-            int pointilism_val = rand() % 100 + 1;
+            int pointillism_val = rand() % 100 + 1;
 
-	    // Applies effect only to random group of pixels
-            if (pointilism_val <= 3){
+	        // Applies effect only to random group of pixels
+            if (pointillism_val <= 3){
 
                 int radius = rand() % 5 + 1;
-                for (int m = i - radius; m <= i + radius; m++){
-                    for (int n = j - radius; n <= j + radius; n++){
+                for (int m = i - radius; m <= i + radius; m++) {
+                    for (int n = j - radius; n <= j + radius; n++) {
 
                         // Loops through all possible neighbors, to see which lie
                         // in the circle.
                         // If so, edits to match "center" pixel.
                         if (m >= 0 && n >= 0 && m < img2->rows &&
-                            n < img2->cols){
+                            n < img2->cols) {
 
                             if ((m - i)*(m - i) + (n - j)*(n - j) <=
-                                radius*radius){
+                                radius*radius) {
 
                                 int k2 = m*img1->cols + n;
                                 img2->data[k2] = img2->data[k1];
@@ -221,7 +221,7 @@ int pointilism(Image * img1, FILE * new_image){
 
 
 
-int blur(Image * img1, FILE * new_image, float sigma){
+int blur(Image * img1, FILE * new_image, float sigma) {
 
     // Modify sigma so it's ready for use
     int n = 10*sigma;

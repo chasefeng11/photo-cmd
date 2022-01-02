@@ -3,7 +3,7 @@ DATE: October 2021
 
 
 DESCRIPTION:
-A photoshop-inspired image processing program in C. The program takes an image files (in the .ppm format).
+A photoshop-inspired image processing program in C. The program takes an image file (in the .ppm format).
 
 It can the:
 1. binarize - convert the input image to black and white by thresholding

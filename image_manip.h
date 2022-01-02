@@ -45,10 +45,10 @@ int zoom_in(Image * img1, FILE * new_image);
 int rotate_left(Image * img1, FILE * new_image);
 
 
-//___pointilism___
-/* apply painting-like pointilism technique to image
+//___pointillism___
+/* apply painting-like pointillism technique to image
  */
-int pointilism(Image * img1, FILE * new_image);
+int pointillism(Image * img1, FILE * new_image);
 
 
 //___blur___
